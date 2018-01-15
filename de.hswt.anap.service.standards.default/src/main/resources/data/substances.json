@@ -1,0 +1,108 @@
+[  
+   {
+   	  "logD":0.87,
+	  "name":"n-benzyl formamide",
+	  "columnName":"Agilent Zorbax SB-C18"
+   },
+   {  
+      "logD":1.21,
+      "name":"benzylalcohol",
+	  "columnName":"Agilent Zorbax SB-C18"
+      
+   },
+   {  
+      "logD":1.94,
+      "name":"3-phenyl propanol",
+	  "columnName":"Agilent Zorbax SB-C18"
+   },
+   {  
+      "logD":1.53,
+      "name":"acetophenone",
+	  "columnName":"Agilent Zorbax SB-C18"
+   },
+   {  
+      "logD":1.83,
+      "name":"benzonitrile",
+	  "columnName":"Agilent Zorbax SB-C18"
+   },
+   {  
+      "logD":2.27,
+      "name":"p-chlorophenol",
+	  "columnName":"Agilent Zorbax SB-C18"
+   },
+   {  
+      "logD":1.98,
+      "name":"methyl benzoate",
+	  "columnName":"Agilent Zorbax SB-C18"
+   },
+   {  
+      "logD":2.93,
+      "name":"ethylbenzene",
+	  "columnName":"Agilent Zorbax SB-C18"
+   },
+   {  
+      "logD":2.74,
+      "name":"bromobenzene",
+	  "columnName":"Agilent Zorbax SB-C18"
+   },
+   {  
+      "logD":3.82,
+      "name":"n-butylbenzene",
+	  "columnName":"Agilent Zorbax SB-C18"
+   },
+   {  
+      "logD":2.98,
+      "name":"butylparaben",
+	  "columnName":"Waters Acquity BEH C18"
+   },
+   {  
+      "logD":2.23,
+      "name":"propiopheneone",
+	  "columnName":"Waters Acquity BEH C18"
+   },
+   {  
+      "logD":2.02,
+      "name":"ethylparaben",
+	  "columnName":"Waters Acquity BEH C18"
+   },
+   {  
+      "logD":0.64,
+      "name":"ketoprofen",
+	  "columnName":"Waters Acquity BEH C18"
+   },
+   {  
+      "logD":1.35,
+      "name":"4-nitrophenol",
+	  "columnName":"Waters Acquity BEH C18"
+   },
+   {  
+      "logD":1.21,
+      "name":"acetanilide",
+	  "columnName":"Waters Acquity BEH C18"
+   },
+   {  
+      "logD":3.53,
+      "name":"acenaphthene",
+	  "columnName":"Waters Acquity BEH C18"
+   },
+   {  
+      "logD":4.01,
+      "name":"heptanophenone",
+	  "columnName":"Waters Acquity BEH C18"
+   },
+   {  
+      "logD":4.45,
+      "name":"octanophenone",
+	  "columnName":"Waters Acquity BEH C18"
+   },
+   {  
+      "logD":1.71,
+      "name":"ibuprofen",
+	  "columnName":"Waters Acquity BEH C18"
+   },
+   {
+   	  "logD":-0.55,
+   	  "name":"caffeine",
+	  "columnName":"Waters Acquity BEH C18"
+   }	  
+]

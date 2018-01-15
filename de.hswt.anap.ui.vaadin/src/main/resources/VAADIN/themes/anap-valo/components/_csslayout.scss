@@ -1,0 +1,172 @@
+/*!
+ * Copyright 2015-2017 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * The amount of spacing between different widgets in a component group.
+ * If null, a computed value is used ($v-border size * -1, or 1px if $v-border size is 0)
+ * 
+ * @group csslayout
+ */
+$v-component-group-spacing: null !default;
+
+
+/**
+ * Outputs the additional styles for the CssLayout component. Does not produce any other output.
+ * 
+ * @param {string} $primary-stylename (v-csslayout) - the primary style name for the selectors
+ * @param {bool} $include-additional-styles - should the mixin output all the different style variations of the component
+ *
+ * @group csslayout
+ */
+@mixin valo-csslayout ($primary-stylename: v-csslayout, $include-additional-styles: contains($v-included-additional-styles, csslayout)){
+  @if $include-additional-styles {
+    .#{$primary-stylename}-well {
+      @include valo-panel-well-style;
+      @include valo-panel-adjust-content-margins;
+    }
+
+	// @change
+    .#{$primary-stylename}-theme {
+		@include valo-panel-well-style($background-color: $v-theme-color);
+		@include valo-panel-adjust-content-margins;
+    }
+
+	// @change
+    .#{$primary-stylename}-background {
+		@include valo-panel-well-style($background-color: $v-background-color);
+		@include valo-panel-adjust-content-margins;
+    }
+
+	// @change
+    .#{$primary-stylename}-app {
+		@include valo-panel-well-style($background-color: $v-app-background-color);
+		@include valo-panel-adjust-content-margins;
+    }
+
+	// @ change
+    .#{$primary-stylename}-caption-info {
+	  @include valo-layout-caption-style($background-color: $v-info-color);
+	  box-shadow: none;
+    }
+
+	// @ change
+    .#{$primary-stylename}-caption-background {
+	  @include valo-layout-caption-style($background-color: $v-background-color);
+	  box-shadow: none;
+    }
+
+	// @ change
+    .#{$primary-stylename}-caption-theme {
+	  @include valo-layout-caption-style($background-color: $v-theme-color);
+	  box-shadow: none;
+    }
+
+	// @ change
+    .#{$primary-stylename}-caption {
+	  @include valo-layout-caption-style();
+    }
+
+    .#{$primary-stylename}-card {
+      @include valo-panel-style;
+      @include valo-panel-adjust-content-margins;
+    }
+
+    .#{$primary-stylename}-v-component-group {
+      @include valo-component-group;
+    }
+  }
+}
+
+// @change
+@mixin valo-layout-caption-style ($background-color: $v-background-color) {
+	@include valo-panel-caption-style($background-color: $background-color);
+	color: $v-title-color;
+	font-weight: $v-title-font-weight;
+    box-shadow: none;
+	font-size: $v-font-size--large * 0.9;
+	padding-left: $v-layout-margin-left;
+	padding-top: $v-layout-margin-top/1.5;
+	padding-bottom: $v-layout-margin-bottom/1.5;
+}
+
+
+/**
+ * Outputs the styles for a horizontal component group. The target component is 
+ * expected to be a CssLayout, which is a single DIV element with child components 
+ * directly inside.
+ * 
+ * @group csslayout
+ * 
+ * @example scss
+ * .my-csslayout {
+ *   @include valo-component-group;
+ * }
+ */
+@mixin valo-component-group {
+  white-space: nowrap;
+  position: relative;
+
+  @if $v-border-radius > 0 {
+    .v-widget ~ .v-widget:not(:last-child) {
+      border-radius: 0;
+    }
+
+    .v-widget:last-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .v-widget:first-child,
+    .v-caption:first-child + .v-widget {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .v-widget ~ .v-widget.first.first {
+      border-radius: $v-border-radius 0 0 $v-border-radius;
+    }
+
+    .v-widget ~ .v-widget.last.last {
+      border-radius: 0 $v-border-radius $v-border-radius 0;
+    }
+  }
+
+  // Assume most components have borders.
+  // This is just a best-guess, will need fine-tuning if border-widths vary from widget-to-widget
+  .v-widget {
+    vertical-align: middle;
+
+    $v-border-width: first-number($v-border);
+
+    @if $v-border-width > 0 {
+      margin-left: $v-component-group-spacing or -$v-border-width;
+    } @else {
+      margin-left: $v-component-group-spacing or 1px;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    // Focused component should be on top
+    &:focus,
+    &[class*="focus"],
+    [class*="focus"] {
+      position: relative;
+      z-index: 5;
+    }
+  }
+}

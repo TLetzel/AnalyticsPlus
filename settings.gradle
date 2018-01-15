@@ -1,0 +1,15 @@
+rootProject.name = 'de.hswt.anap'
+
+include 'de.hswt.anap.application'
+include 'de.hswt.anap.ui.vaadin'
+include 'de.hswt.anap.ui.vaadin.custom'
+include 'de.hswt.anap.service.chromatogram.api'
+include 'de.hswt.anap.service.chromatogram.impl'
+include 'de.hswt.anap.service.quiz.api'
+include 'de.hswt.anap.service.quiz.impl'
+include 'de.hswt.anap.service.rulesolver.api'
+include 'de.hswt.anap.service.rulesolver.impl'
+include 'de.hswt.anap.service.standards.api'
+include 'de.hswt.anap.service.standards.default'
+include 'de.hswt.anap.model'
+

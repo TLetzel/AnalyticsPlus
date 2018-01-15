@@ -1,0 +1,74 @@
+/*!
+ * Copyright 2015-2017 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@mixin custom-grid($primary-stylename: v-custom-grid) {
+
+	@include valo-grid($primary-stylename);
+	
+	.#{$primary-stylename}-scroller-vertical,
+	.#{$primary-stylename}-scroller-horizontal {
+		border: $v-grid-border;
+	}
+
+	.#{$primary-stylename}-scroller-vertical {
+		border-right: none;
+		border-left: $v-grid-border;
+		border-bottom: none;
+	}
+
+	.#{$primary-stylename}-scroller-horizontal {
+		border: none;
+		border-right: $v-grid-border;
+	}
+
+	.#{$primary-stylename}-tablewrapper {
+		border: none;
+		border-top: $v-grid-border;
+		border-top-color: transparent;
+	}
+
+	.#{$primary-stylename}-header-deco {
+		border: none;
+		border-left: $v-grid-header-border;
+		background-color: $v-grid-header-background-color;
+	}
+
+	.#{$primary-stylename}-footer-deco {
+		border: none;
+		border-top: $v-grid-footer-border;
+		border-left: $v-grid-footer-border;
+		background-color: $v-grid-footer-background-color;
+	}
+
+	.#{$primary-stylename}-horizontal-scrollbar-deco {
+		background-color: $v-grid-footer-background-color;
+		border: none;
+		border-top: $v-grid-footer-border;
+	}
+
+	@for $i from 1 through 10 {
+		.#{$primary-stylename}-row-height-#{$i}
+		 	.#{$primary-stylename}-body
+				.#{$primary-stylename}-cell {
+					height: grid-line-height($i);
+		}
+	}
+}
+
+@function grid-line-height($line-count) {
+	@return $v-font-size * ($v-line-height * ($line-count + $line-count * 0.3) + 0.2);
+}
+

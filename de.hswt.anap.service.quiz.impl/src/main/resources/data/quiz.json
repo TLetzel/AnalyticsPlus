@@ -1,0 +1,586 @@
+{
+   "workflows":[
+      {
+         "name":"Workflow1",
+         "infoLabels":[
+         	"Sample formulation",
+         	"Analyte of interest",
+			"Procedure",
+			"Postanalysis"         
+         ],
+         "infoContents":[
+         	"Your sample is solved in water pH 7",
+         	"Non-polar compound, which carries a positively charged functional group ",
+         	"SPE",
+         	"HPLC"
+         ],
+         "questions":[
+            {
+               "text":"Selection of SPE column",
+               "answers":[
+                  {
+                     "text":"Reversed Phase",
+                     "correctness":"correct",
+                     "feedback":"You can use RP-purification, but be aware of the charged functional group! The charge may weaken the interaction between non-polar compound and non-polar stationary phase. This can lead to low recovery, due to the compound eluting during washing steps."
+                  },
+                  {
+                     "text":"Normal Phase",
+                     "correctness":"incorrect",
+                     "feedback":"Normal phase SPE is used for the purification of polar to moderately polar compounds. It is therefore not suitable for non-polar compounds."
+                  },
+                  {
+                     "text":"Anion Ion-Exchange",
+                     "correctness":"incorrect",
+                     "feedback":"You may use Cation ion-exchange SPE, due to the charge of the molecule. However anion exchange positively charged compound. Alternatively mixed mode Ion-exchange columns may provide even more selectivity for the analyte of interest, due to electrostatic as well as hydrophobic interactions."
+                  }
+               ]
+            },
+            {
+               "text":"Washing",
+               "answers":[
+                  {
+                     "text":"100% aqueous",
+                     "correctness":"correct",
+                     "feedback":"Using 100% aqeuous washing solution will not disrupt the interaction of the mainly non-polar analyte with the non-polar stationary phase (regardless of the charge). However you will only get rid of polar matrix components. However washing with 100% aqeuous solution is the safest option to avoid loss of the analyte during washing of the column."
+                  },
+                  {
+                     "text":"100% organic",
+                     "correctness":"incorrect",
+                     "feedback":"Washing the column with 100% organic solvent will lead to the complete eluting of all compounds, including the analyte of interest."
+                  },
+                  {
+                     "text":"10-50% organic",
+                     "correctness":"halfCorrect",
+                     "feedback":"The higher the organic solvent proportion of the washing step without eluting the compound(s) of interest, the better. You get rid of unwanted sample matrix. However the optimal composition of washing solvent has to be tested."
+                  }
+               ]
+            },
+            {
+               "text":"Elution",
+               "answers":[
+                  {
+                     "text":"100% aqueous",
+                     "correctness":"incorrect",
+                     "feedback":"The non-polar analyte won´t elute with 100% aqeuous solution, due to its low solubility."
+                  },
+                  {
+                     "text":"50% to 100% organic",
+                     "correctness":"correct",
+                     "feedback":"The non-polar analyte will elute from the column with high organic solvent contents."
+                  },
+                  {
+                     "text":"10% to 50% organic",
+                     "correctness":"incorrect",
+                     "feedback":"Using low organic solvent content will probably result in only a partial elution of the analyte. A fraction will remain on the column."
+                  }
+               ]
+            },
+            {
+               "text":"Further processing prior to HPLC",
+               "answers":[
+                  {
+                     "text":"Injection of sample solved in organic solvent",
+                     "correctness":"halfCorrect",
+                     "feedback":"Depending on the flow rate:injection volume ratio, which is preferably 10:1, the injection of a sample solved in 100% organic solvent is not problematic."
+                  },
+                  {
+                     "text":"Solvent evaporation and redissolution in HPLC starting condition solvent",
+                     "correctness":"correct",
+                     "feedback":"The best approach for HPLC analysis would be to evaporate the sample and to redissolve it in the solvent, which is used at the beginning of the HPLC measurement (mostly highly aqueous with low only low organic solvent proportion."
+                  },
+                  {
+                     "text":"Solvent evaporation and redissolution in 10-50% organic solvent",
+                     "correctness":"halfCorrect",
+                     "feedback":"Depending on the solubility of the analyte of interest, it might be necessary to elevate the organic solvent proportion, e.g. In case of a very non-polar compound, which is insoluble in highly aqueous solution."
+                  }
+               ]
+            }
+         ]
+      },
+      {
+      "name":"Workflow2",
+      "infoLabels":[
+         	"Sample formulation",
+         	"Analyte of interest", 
+         	"Procedure",
+         	"Postanalysis"        	     
+ 		],
+         "infoContents":[
+         	"Your sample is solved in water pH 7",
+         	"Non-polar compound, which carries a positively charged functional group",
+         	"SPE",
+         	"HPLC"
+        ],
+        "questions":[
+            {
+               "text":"Selection of SPE column",
+               "answers":[
+                  {
+                     "text":"Anion Ion-Exchange",
+                     "correctness":"incorrect",
+                     "feedback":"Due to the positive charge of the analyte, anion ion-exchange SPE is not suitable"
+                  },
+                  {
+                     "text":"Normal Phase",
+                     "correctness":"incorrect",
+                     "feedback":"Normal phase SPE is used for the purification of polar to moderately polar compounds. It is therefore not suitable for non-polar compounds."
+                  },
+                  {
+                     "text":"Cation Ion-Exchange",
+                     "correctness":"correct",
+                     "feedback":"Cation ion-exchange SPE can be used, due to the positively charged molecule. Alternatively mixed mode Ion-exchange columns may provide even more selectivity for the analyte of interest, due to electrostatic as well as hydrophobic interactions."
+                  }
+               ]
+            },
+            {
+               "text":"Washing",
+               "answers":[
+                  {
+                     "text":"100% aqueous buffer, low salt concentration",
+                     "correctness":"correct",
+                     "feedback":"Using 100% aqueous washing solution (with low salt concentration) will not disrupt the electrostatic interactions of the charged compound with the stationary phase"
+                  },
+                  {
+                     "text":"100% organic",
+                     "correctness":"halfCorrect",
+                     "feedback":"Washing the column with 100% organic solvent might lead to the complete eluting of all compounds, including the analyte of interest. However, it has to be tested whether or not it can be used, since it probably won´t disrupt the electrostatic interaction of the analyte with the stationary phase."
+                  },
+                  {
+                     "text":"100% aqueous buffer, high salt concentration",
+                     "correctness":"incorrect",
+                     "feedback":"High salt concentrations would result in the disruption of the electrostatic interaction of the analyte with the stationary phase, which results in the elution of the analyte. Thus it is not suitable for the washing step."
+                  }
+               ]
+            },
+            {
+               "text":"Elution",
+               "answers":[
+                  {
+                     "text":"Organic solvent containing ammonia",
+                     "correctness":"correct",
+                     "feedback":"The use of organic solvent on the one hand solves the non-polar analyte and on the other hand high salt concentration disrupts the electrostatic interaction of the analyte with the stationary phase. The analyte will therefore elute from the SPE column."
+                  },
+                  {
+                     "text":"100% aqueous, neutral pH",
+                     "correctness":"incorrect",
+                     "feedback":"An aqueous elution solvent won´t solve the non-polar compound and will not disrupt the interaction of the analyte with the stationary phase."
+                  },
+                  {
+                     "text":"Elution with high salt concentration",
+                     "correctness":"halfCorrect",
+                     "feedback":"High salt content disrupts the electrostatic interaction between analyte and stationary phase. However to solve the non-polar analyte the addition of organic solvents might the necessary."
+                  }
+               ]
+            },
+            {
+               "text":"Further processing prior to HPLC",
+               "answers":[
+                  {
+                     "text":"Injection of sample as it is",
+                     "correctness":"incorrect",
+                     "feedback":"Ammonia might disturb the chromatographic outcome, wherefore it may be better to evaporate the solvent. Since ammonia is volatile, using a vacuum evaporater may result in the evaporation of most of the ammonia content."
+                  },
+                  {
+                     "text":"Solvent evaporation and redissolution in HPLC starting condition solvent",
+                     "correctness":"correct",
+                     "feedback":"The best approach for HPLC analysis would be to evaporate the elution solvent and to redissolve it in the solvent, which is used at the beginning of the HPLC measurement (mostly highly aqueous with low organic solvent proportion)."
+                  },
+                  {
+                     "text":"Solvent evaporation and redissolution in 10-50% organic solvent",
+                     "correctness":"halfCorrect",
+                     "feedback":"Depending on the solubility of the analyte of interest, it might be necessary to elevate the organic solvent proportion (in comparison to the HPLC mobile phase starting conditions), e.g.  in case of a very non-polar compound, which is insoluble in highly aqueous solution."
+                  }
+               ]
+            }
+         ]
+      },
+      {
+      "name":"Workflow3",
+      "infoLabels":[
+         	"Sample formulation",
+         	"Analyte of interest", 
+         	"Procedure",
+         	"Postanalysis"          	     
+ 		],
+         "infoContents":[
+         	"Your sample is solved in water pH 7",
+         	"Non-polar compound (no charge at pH 7)",
+         	"SPE",
+         	"Mass spectrometry"
+        ],
+        "questions":[
+            {
+               "text":"Selection of SPE column",
+               "answers":[
+                  {
+                     "text":"Reversed Phase",
+                     "correctness":"correct",
+                     "feedback":"Reversed phase SPE is the method of choice here, since the compound will be retained due to hydrophobic interactions."
+                  },
+                  {
+                     "text":"Normal Phase",
+                     "correctness":"incorrect",
+                     "feedback":"Normal phase SPE is used for the purification of polar to moderately polar compounds. It is therefore not suitable for non-polar compounds."
+                  },
+                  {
+                     "text":"HILIC",
+                     "correctness":"incorrect",
+                     "feedback":"HILIC SPE is used for the purification of polar (charged) compounds. It is therefore not suitable for non-polar compounds."
+                  }
+               ]
+            },
+            {
+               "text":"Washing",
+               "answers":[
+                  {
+                     "text":"100% aqueous",
+                     "correctness":"correct",
+                     "feedback":"Using 100% aqeuous washing solution will not disrupt the interaction of the non-polar analyte with the non-polar stationary phase. However you will only get rid of polar matrix components."
+                  },
+                  {
+                     "text":"100% organic",
+                     "correctness":"incorrect",
+                     "feedback":"Washing the column with 100% organic solvent will lead to the complete eluting of all compounds, including the analyte of interest."
+                  },
+                  {
+                     "text":"10-50% organic",
+                     "correctness":"halfCorrect",
+                     "feedback":"The higher the organic solvent proportion of the washing step without eluting the compound(s) of interest, the better. You get rid of unwanted sample matrix. However the optimal composition of washing solvent has to be tested."
+                  }
+               ]
+            },
+            {
+               "text":"Elution",
+               "answers":[
+                  {
+                     "text":"100% aqueous",
+                     "correctness":"incorrect",
+                     "feedback":"The non-polar analyte won´t elute with 100% aqeuous solution, due to its low solubility."
+                  },
+                  {
+                     "text":"50% to 100% organic",
+                     "correctness":"correct",
+                     "feedback":"The non-polar analyte will elute from the column with high organic solvent contents."
+                  },
+                  {
+                     "text":"10 to 50% organic",
+                     "correctness":"incorrect",
+                     "feedback":"Using low organic solvent content will probably result in only a partial elution of the analyte. A fraction will remain on the column."
+                  }
+               ]
+            },
+            {
+               "text":"Further processing prior to HPLC",
+               "answers":[
+                  {
+                     "text":"Injection of sample as it is",
+                     "correctness":"halfCorrect",
+                     "feedback":"You can inject the sample solved in mainly organic solvent. However depending on the chemical nature of the compound, i.e. presence of chargable functional groups, it may not be ionized and thus not detectable."
+                  },
+                  {
+                     "text":"Solvent evaporation and redissolution in aqueous solution (either acidic or basic)",
+                     "correctness":"halfCorrect",
+                     "feedback":"In case the compound contains chargable groups, it is beneficial to adjust the pH, which then results in a negatively or positively charged compounds, which is easily detectable with MS."
+                  },
+                  {
+                     "text":"low organic solvent content in mainly aqueous (acidic or basic) solution",
+                     "correctness":"correct",
+                     "feedback":"In case the compound contains chargable groups, it is beneficial to adjust the pH, which then results in a negatively or positively charged compounds, which is easily detectable with MS. Furthermore the addition of low organic solvent proportions will likely improve the MS-signal."
+                  }
+               ]
+            }
+         ]
+      },
+      {
+      "name":"Workflow4",
+      "infoLabels":[
+         	"Sample formulation",
+         	"Analyte of interest", 
+         	"Procedure",
+         	"Postanalysis"         	     
+ 		],
+         "infoContents":[
+         	"Your sample is solved in water pH 6",
+         	"basic non-polar compound",
+         	"SPE",
+         	"HPLC"
+        ],
+        "questions":[
+            {
+               "text":"Selection of SPE column",
+               "answers":[
+                  {
+                     "text":"Mixed mode ",
+                     "correctness":"correct",
+                     "feedback":"Mixed mode SPE provides electrostatic as well as hydrophobic interaction, wherefore it provides good retention for a charged non-polar compound."
+                  },
+                  {
+                     "text":"Normal Phase",
+                     "correctness":"incorrect",
+                     "feedback":"Normal phase SPE is used for the purification of polar to moderately polar compounds. It is therefore not suitable for non-polar compounds."
+                  },
+                  {
+                     "text":"Cation ion-exchange",
+                     "correctness":"halfCorrect",
+                     "feedback":"Cation ion-exchange SPE can be used, due to the positively charged molecule. Alternatively mixed mode Ion-exchange columns may provide even more selectivity for the analyte of interest, due to electrostatic as well as hydrophobic interactions."
+                  }
+               ]
+            },
+            {
+               "text":"Washing",
+               "answers":[
+                  {
+                     "text":"100% aqueous pH 6",
+                     "correctness":"correct",
+                     "feedback":"Since the compound of interest was introduced to the column solved in 100% aqueous solution pH 6.0 and absorbed to the column sorbent, washing the column with the same solution won´t elute the analyte. However you might get rid of unwanted compounds."
+                  },
+                  {
+                     "text":"100% organic",
+                     "correctness":"correct",
+                     "feedback":"Washing with 100% organic may work in this case depending on the organic solvent used.For instance, 100% methanol, which is a weak organic solvent, will likely not interfere overly much with the hydrophobic interaction of the analyte with the mixed mode sorbent. So the analyte may still remain on the column -also due to electrostatic interaction- but you will get rid of moderately non-polar compounds by washing with methanol."
+                  },
+                  {
+                     "text":"Acidic solution",
+                     "correctness":"correct",
+                     "feedback":"By washing with an acidic solution you will elute polar impurities without interfering with hydrophobic interaction as well as electrostatic interaction, since the positively charged groups of the basic analyte of interest won´t be neutralized."
+                  }
+               ]
+            },
+            {
+               "text":"Elution",
+               "answers":[
+                  {
+                     "text":"100% aqueous",
+                     "correctness":"incorrect",
+                     "feedback":"The non-polar analyte won´t elute with 100% aqeuous solution, due to its low solubility."
+                  },
+                  {
+                     "text":"Base & organic solvent",
+                     "correctness":"correct",
+                     "feedback":"The organic solvent will resolve hydrophobic interactions, whereas the addition of a base weakens the electrostatic interaction."
+                  },
+                  {
+                     "text":"10 to 50% organic",
+                     "correctness":"incorrect",
+                     "feedback":"Using low organic solvent content will probably result in only a partial elution of the analyte. A fraction will remain on the column. Furthermore the compounds is also retained due to electrostatic interaction, which may even be strengthened in the presence of organic solvent."
+                  }
+               ]
+            },
+            {
+               "text":"Further processing prior to HPLC",
+               "answers":[
+                  {
+                     "text":"Injection of sample as it is",
+                     "correctness":"halfCorrect",
+                     "feedback":"Depending on the flow rate:injection volume ratio, which is preferably 10:1, the injection of a sample as it is might work. However, since the HPLC mobile phase may be of another composition, RT can be shifted in comparison to samples, which were injected solved in the HPLC starting condition solution."
+                  },
+                  {
+                     "text":"Solvent evaporation and redissolution in HPLC starting condition solvent",
+                     "correctness":"correct",
+                     "feedback":"The best approach for HPLC analysis would be to evaporate the sample and to redissolve it in the solvent, which is used at the beginning of the HPLC measurement (mostly highly aqueous with low only low organic solvent proportion."
+                  },
+                  {
+                     "text":"Solvent evaporation and redissolution in 10-50% organic solvent",
+                     "correctness":"halfCorrect",
+                     "feedback":"RP HPLC methods usually start with highly aqueous mobile phase conditions. Solving a very non-polar compound in the HPLC starting condition solvent might therefore not always possible, due to a low solubility in water.The addition of organic solvents can therefore help to completely solve the compound prior to the injection to the HPLC."
+                  }
+               ]
+            }
+         ]
+      },
+      {
+      "name":"Workflow5",
+      "infoLabels":[
+         	"Sample formulation",
+         	"Analyte of interest", 
+         	"Procedure",
+         	"Postanalysis"          	     
+ 		],
+         "infoContents":[
+         	"Your sample is solved in organic solvent",
+         	"Polar compound (no charge at pH 7)",
+         	"SPE",
+         	"GC"
+        ],
+        "questions":[
+            {
+               "text":"Selection of SPE column",
+               "answers":[
+                  {
+                     "text":"Reversed Phase",
+                     "correctness":"incorrect",
+                     "feedback":"A polar compounds will likely pass through a RP column without interacting with the stationary phase."
+                  },
+                  {
+                     "text":"Normal Phase",
+                     "correctness":"correct",
+                     "feedback":"Normal phase SPE can be used for the purification of polar compounds."
+                  },
+                  {
+                     "text":"Anion Ion-Exchange",
+                     "correctness":"incorrect",
+                     "feedback":"Since the compound carries no charge, ion-exchange SPE is not the method of choice."
+                  }
+               ]
+            },
+            {
+               "text":"Washing",
+               "answers":[
+                  {
+                     "text":"100% aqueous",
+                     "correctness":"incorrect",
+                     "feedback":"Using 100% aqueous washing solution will disrupt the interaction of the polar analyte with the polar stationary phase. Consequently the analyte will elute."
+                  },
+                  {
+                     "text":"100%  non-polar organic solvent",
+                     "correctness":"correct",
+                     "feedback":"Washing the column with 100% organic solvent won't elute the compounds. You will however get rid of non-polar and moderately non-polar impurities."
+                  },
+                  {
+                     "text":"50-100% organic",
+                     "correctness":"halfCorrect",
+                     "feedback":"Since the compound is polar the use of only low organic solvent proportions can result in its (partial) elution. However, depending on the compound, low organic solvent concentrations may also not result in its elution, but in the elution of a variety of different sample impurities. The most suitable concentration of solvents has therefore to be tested."
+                  }
+               ]
+            },
+            {
+               "text":"Elution ",
+               "answers":[
+                  {
+                     "text":"water/solvent or solvent/solvent mixtures",
+                     "correctness":"correct",
+                     "feedback":"The polar analyte will elute with a water-solvent or solvent-solvent mixture. In general elution solvent ought to be more polar than the solvent used for the original sample formulation or the solvent used for the washing step."
+                  },
+                  {
+                     "text":"50% to 100% organic",
+                     "correctness":"halfCorrect",
+                     "feedback":"Organic elution solvent ought to be more polar than the solvent used for the sample formulation or during the washing step."
+                  },
+                  {
+                     "text":"salt gradient",
+                     "correctness":"incorrect",
+                     "feedback":"Salt gradients are used to disrupt electrostatic interactions using ion-exchange SPE."
+                  }
+               ]
+            },
+            {
+               "text":"Further processing prior to HPLC",
+               "answers":[
+                  {
+                     "text":"Injection of sample as it is",
+                     "correctness":"incorrect",
+                     "feedback":"GC requires a volatile sample matrix. Aqueous sample formulation is therefore not suitable."
+                  },
+                  {
+                     "text":"Solvent evaporation and redissolution in volatile organic solvent",
+                     "correctness":"correct",
+                     "feedback":"GC requires the use of volatile organic solvents for sample formulation"
+                  },
+                  {
+                     "text":"Solvent evaporation and redissolution in 10-50% organic solvent",
+                     "correctness":"incorrect",
+                     "feedback":"GC requires a volatile sample matrix. Mainly aqueous sample formulation is therefore not suitable."
+                  }
+               ]
+            }
+         ]
+      },
+      {
+      "name":"Workflow6",
+      "infoLabels":[
+         	"Sample formulation",
+         	"Analyte of interest", 
+         	"Procedure",
+         	"Postanalysis"          	     
+ 		],
+         "infoContents":[
+         	"Your sample is solved in acetonitrile",
+         	"Polar compound carrying negative charges",
+         	"SPE",
+         	"MS"
+        ],
+        "questions":[
+            {
+               "text":"Selection of SPE column",
+               "answers":[
+                  {
+                     "text":"Reversed Phase",
+                     "correctness":"incorrect",
+                     "feedback":"A polar compounds will likely pass through a RP column without interacting with the stationary phase."
+                  },
+                  {
+                     "text":"HILIC",
+                     "correctness":"correct",
+                     "feedback":"HILIC SPE can be used for the purification of polar compounds."
+                  },
+                  {
+                     "text":"Cation ion-exchange",
+                     "correctness":"incorrect",
+                     "feedback":"Since the compound carries negative charges, cation ion-exchange SPE is not the method of choice"
+                  }
+               ]
+            },
+            {
+               "text":"Washing",
+               "answers":[
+                  {
+                     "text":"100% aqueous",
+                     "correctness":"incorrect",
+                     "feedback":"100% aqueous solution will elute the compounds from the SPE column"
+                  },
+                  {
+                     "text":"100% acetonitrile",
+                     "correctness":"halfCorrect",
+                     "feedback":"The use of 100% acetonitrile won´t elute the polar compound. However you will only get rid of non-polar impurities. Polar ones will remain on the column."
+                  },
+                  {
+                     "text":"10 - 50% acetonitrile",
+                     "correctness":"correct",
+                     "feedback":"The higher the aqueous proportion of the washing step without eluting the compound(s) of interest, the better. You get rid of unwanted sample matrix. However the optimal composition of washing solvent has to be tested."
+                  }
+               ]
+            },
+            {
+               "text":"Elution",
+               "answers":[
+                  {
+                     "text":"100% aqueous",
+                     "correctness":"correct",
+                     "feedback":"The polar analyte will elute with 100% aqeuous solution, due to its high warer solubility."
+                  },
+                  {
+                     "text":"100% organic",
+                     "correctness":"incorrect",
+                     "feedback":"The polar analyte won´t elute from the column with high organic solvent contents."
+                  },
+                  {
+                     "text":"10 to 50% organic",
+                     "correctness":"incorrect",
+                     "feedback":"Using low organic solvent content will probably result in only a partial elution of the analyte. A fraction will remain on the column."
+                  }
+               ]
+            },
+            {
+               "text":"Further processing prior to HPLC",
+               "answers":[
+                  {
+                     "text":"Injection of sample as it is",
+                     "correctness":"halfCorrect",
+                     "feedback":"You can inject the sample solved in 100% aqeuous solution. However depending on the chemical nature of the compound, i.e. presence of chargable functional groups, it may not be ionized and thus not detectable, i.e. the pH needs to be adjusted."
+                  },
+                  {
+                     "text":"Solvent evaporation and redissolution in organic solution",
+                     "correctness":"halfCorrect",
+                     "feedback":"You can inject the sample solved in 100% organic solution. However depending on the chemical nature of the compound, i.e. presence of chargable functional groups, it may not be ionized and thus not detectable."
+                  },
+                  {
+                     "text":"low organic solvent content in mainly aqueous (acidic or basic) solution",
+                     "correctness":"correct",
+                     "feedback":"In case the compound contains chargable groups, it is beneficial to adjust the pH, which then results in a negatively or positively charged compounds, which is easily detectable with MS. Furthermore the addition of low organic solvent proportions will likely improve the MS-signal."
+                  }
+               ]
+            }
+         ]
+      }  
+   ]
+}
