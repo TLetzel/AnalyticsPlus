@@ -1,6 +1,6 @@
-# Spring Boot Vaadin Quickstart Project
+# Analytics Plus
 
-Multi Module Sample de.hswt.vaadin.bootstrap.application.Application to get started with Spring and Vaadin
+If you have any questions, send an E-Mail to: T.Letzel@tum.de
 
 ## Technologies
 
@@ -10,5 +10,10 @@ Multi Module Sample de.hswt.vaadin.bootstrap.application.Application to get star
 * Vaadin
 * Vaadin4Spring
 
-### Usage
+## Usage
 
+1. Clone git repository
+2. Run `./gradlew clean build -x javadoc`
+    - Only use the provided Gradle version from the Wrapper. Using a different Version will result in an error. 
+3. Run `java -jar de.hswt.anap.application/build/libs/de.hswt.anap.application-1.0.0.jar`
+4. Open Browser and navigate to `http://localhost:8080`
